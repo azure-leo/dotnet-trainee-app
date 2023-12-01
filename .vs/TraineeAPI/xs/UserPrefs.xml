@@ -1,0 +1,34 @@
+﻿<Properties StartupConfiguration="{C71BB418-942F-415B-BCAC-6AC452F69B20}|https">
+  <MonoDevelop.Ide.Workbench ActiveDocument="TraineeAPI/Properties/launchSettings.json">
+    <Files>
+      <File FileName="TraineeAPI/Properties/launchSettings.json" Line="18" Column="33" />
+      <File FileName="TraineeAPI/Models/User.cs" />
+      <File FileName="TraineeAPI/Models/Article.cs" />
+      <File FileName="TraineeAPI/Program.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="TraineeAPI" expanded="True">
+            <Node name="TraineeAPI" expanded="True">
+              <Node name="Dependencies" expanded="True" selected="True" />
+              <Node name="Controllers" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="Properties" expanded="True" />
+              <Node name="Services" expanded="True">
+                <Node name="UserService" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.TraineeAPI PreferredExecutionTarget="/Applications/Google Chrome.app" />
+</Properties>
