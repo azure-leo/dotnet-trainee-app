@@ -2,13 +2,13 @@ namespace TraineeAPI.Services.UserService;
 
 public interface IUserService
 {
-    List<User> GetAllUsers();
+    Task<List<User>> GetAllUsers();
     
-    User? GetUserById(int id);
+    Task<User?> GetUserById(int id);
     
-    List<User> AddUser(User user);
+    Task<List<User>> AddUser(User user);
 
-    List<User>? UpdateUser(int id, User request);
+    Task<List<User>?> UpdateUser(int id, User request);
 
-    List<User>? DeleteUser(int id);
+    Task<List<User>?> DeleteUser(int id);
 }
