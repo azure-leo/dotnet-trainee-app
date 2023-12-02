@@ -22,6 +22,17 @@ public class ArticleService : IArticleService
         return articles;
     }
 
+    public async Task<Article?> GetArticleById(int id)
+    {
+        var article = await _context.Articles.FindAsync(id);
+        if (article is null)
+        {
+            return null;
+        }
+
+        return article;
+    }
+
     public async Task<IEnumerable<Article>> AddArticle(ArticleDTO articleRequest, User user)
     {
         var article = new Article()

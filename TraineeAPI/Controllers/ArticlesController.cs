@@ -24,6 +24,18 @@ public class ArticlesController : Controller
         return Ok(result);
     }
 
+    [HttpGet("{id}")]
+    [Authorize]
+    public async Task<ActionResult<Article>> GetArticleById(int id)
+    {
+        var result = await _articleService.GetArticleById(id);
+        if (result is null)
+        {
+            return NotFound("This article does not exist");
+        }
+        return Ok(result);
+    }
+
     [HttpPost]
     [Authorize]
     public async Task<ActionResult<Article>> AddArticle([FromBody] ArticleDTO articleRequest)

@@ -7,6 +7,7 @@ namespace TraineeAPI.Services.ArticleService;
 public interface IArticleService
 {
     Task<IEnumerable<Article>> GetAllArticles();
+    Task<Article?> GetArticleById(int id);
 
     Task<IEnumerable<Article>> AddArticle(ArticleDTO articleRequest, User user);
 
