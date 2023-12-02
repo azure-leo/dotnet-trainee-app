@@ -1,5 +1,7 @@
 using System.Net;
 using System.Security.Claims;
+using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Mvc;
 using TraineeAPI.Data;
 using TraineeAPI.DTO;
 
@@ -33,6 +35,24 @@ public class ArticleService : IArticleService
         await _context.Articles.AddAsync(article);
         await _context.SaveChangesAsync();
         return await _context.Articles.ToListAsync();
+    }
+
+    public async Task<Article> UpdateArticle(int id, [FromBody] ArticleDTO articleRequest, User user)
+    {
+        var article = await _context.Articles.FirstOrDefaultAsync((article) =>
+            article.Id == id
+        );
+        if (article == null)
+        {
+            return null;
+        }
+
+        article.Title = articleRequest.Title;
+        article.Content = articleRequest.Content;
+        
+        await _context.SaveChangesAsync();
+
+        return article;
     }
     
 }

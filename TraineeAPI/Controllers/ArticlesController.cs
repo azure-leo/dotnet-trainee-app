@@ -38,4 +38,25 @@ public class ArticlesController : Controller
         
         return Ok(result);
     }
+    
+    [HttpPut("{id}")]
+    [Authorize]
+    public async Task<ActionResult<Article>> UpdateArticle(int id, [FromBody] ArticleDTO articleRequest)
+    {
+        HttpContext.Items.TryGetValue("user", out var userObj);
+        User user = (User) userObj;
+        var result = await _articleService.UpdateArticle(id, articleRequest, user);
+
+        if (result == null)
+        {
+            return NotFound(new { message = "Not Found" });
+        }
+
+        if (result.AuthorId != user.Id)
+        {
+            return Unauthorized(new { message = "Unauthorized" });
+        }
+
+        return Ok(result);
+    }
 }
