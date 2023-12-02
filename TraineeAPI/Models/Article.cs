@@ -6,18 +6,11 @@ namespace TraineeAPI.Models
 {
 	public class Article : BaseModel
 	{
-		//"id": 0,
-		//"created_at": "now",
-		//"authorId": 0,
-		//"email": "user@example.com",
-		//"author": "string",
-		//"title": "string",
-		//"content": "string",
-		[Required, MaxLength(100)]
-		public string Title = string.Empty;
+		[Required]
+		[MinLength(2), MaxLength(100)]
+		public string Title { get; set; } = string.Empty;
 
-		[Required, MaxLength(1000)]
-		public string Content = string.Empty;
+		[Required] [MaxLength(1000)] public string Content { get; set; } = string.Empty;
 
 		[Required]
 		public int AuthorId { get; set; }

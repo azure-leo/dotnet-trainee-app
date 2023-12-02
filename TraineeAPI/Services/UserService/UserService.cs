@@ -29,6 +29,7 @@ public class UserService : IUserService
 
     public async Task<List<User>> AddUser(User user)
     {
+        user.Password = BCrypt.Net.BCrypt.HashPassword(user.Password);
         _context.Users.Add(user);
         await _context.SaveChangesAsync();
         return await _context.Users.ToListAsync();

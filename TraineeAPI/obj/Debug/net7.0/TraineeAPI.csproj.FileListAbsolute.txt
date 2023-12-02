@@ -91,3 +91,5 @@
 /Users/kairatsatbekov/Desktop/dotnet-dev/TraineeAPI/TraineeAPI/bin/Debug/net7.0/NuGet.Resolver.dll
 /Users/kairatsatbekov/Desktop/dotnet-dev/TraineeAPI/TraineeAPI/bin/Debug/net7.0/NuGet.Versioning.dll
 /Users/kairatsatbekov/Desktop/dotnet-dev/TraineeAPI/TraineeAPI/bin/Debug/net7.0/System.ComponentModel.Composition.dll
+/Users/kairatsatbekov/Desktop/dotnet-dev/TraineeAPI/TraineeAPI/obj/Debug/net7.0/TraineeAPI.sourcelink.json
+/Users/kairatsatbekov/Desktop/dotnet-dev/TraineeAPI/TraineeAPI/bin/Debug/net7.0/BCrypt.Net-Next.dll

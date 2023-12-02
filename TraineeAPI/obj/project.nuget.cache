@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "8YxYXD8m30D3HLdZZ6F5IoTrE1BxF+8bBlTragMD4ebvn8Xjked0ra4xu9FZpxydenhIgA91s16cW5AsNMxciA==",
+  "dgSpecHash": "KyArdJQyqeJeTEjXZlmFpWedy7H2vlgEMCl++yUIM3AT92nDCUmn/BeZqT12HXgFNU+LJPfJ7FBiJAX3I6/INw==",
   "success": true,
   "projectFilePath": "/Users/kairatsatbekov/Desktop/dotnet-dev/TraineeAPI/TraineeAPI/TraineeAPI.csproj",
   "expectedPackageFiles": [
     "/Users/kairatsatbekov/.nuget/packages/azure.core/1.25.0/azure.core.1.25.0.nupkg.sha512",
     "/Users/kairatsatbekov/.nuget/packages/azure.identity/1.7.0/azure.identity.1.7.0.nupkg.sha512",
+    "/Users/kairatsatbekov/.nuget/packages/bcrypt.net-next/4.0.3/bcrypt.net-next.4.0.3.nupkg.sha512",
     "/Users/kairatsatbekov/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/kairatsatbekov/.nuget/packages/microsoft.aspnetcore.authentication.abstractions/2.2.0/microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "/Users/kairatsatbekov/.nuget/packages/microsoft.aspnetcore.authentication.core/2.2.0/microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512",
