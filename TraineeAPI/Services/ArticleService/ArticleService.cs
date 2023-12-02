@@ -49,6 +49,7 @@ public class ArticleService : IArticleService
 
         article.Title = articleRequest.Title;
         article.Content = articleRequest.Content;
+        article.UpdatedAt = DateTime.UtcNow;
         
         await _context.SaveChangesAsync();
 
