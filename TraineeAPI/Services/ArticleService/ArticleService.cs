@@ -66,5 +66,19 @@ public class ArticleService : IArticleService
 
         return article;
     }
-    
+
+    public async Task<IEnumerable<Article>?> DeleteArticle(int id)
+    {
+        var article = await _context.Articles.FindAsync(id);
+        if (article is null)
+        {
+            return null;
+        }
+
+        _context.Articles.Remove(article);
+        await _context.SaveChangesAsync();
+            
+        return await _context.Articles.ToListAsync();
+    }
+
 }

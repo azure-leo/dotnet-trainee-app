@@ -71,4 +71,16 @@ public class ArticlesController : Controller
 
         return Ok(result);
     }
+    
+    [HttpDelete("{id}")]
+    [Authorize]
+    public async Task<ActionResult<IEnumerable<Article>>> DeleteUser(int id)
+    {
+        var result = await _articleService.DeleteArticle(id);
+        if (result is null)
+        {
+            return NotFound("This article does not exist");
+        }
+        return Ok(result);
+    }
 }

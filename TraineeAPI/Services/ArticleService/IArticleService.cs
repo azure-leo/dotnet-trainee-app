@@ -12,4 +12,6 @@ public interface IArticleService
     Task<IEnumerable<Article>> AddArticle(ArticleDTO articleRequest, User user);
 
     Task<Article> UpdateArticle(int id, [FromBody] ArticleDTO articleRequest, User user);
+    
+    Task<IEnumerable<Article>?> DeleteArticle(int id);
 }
