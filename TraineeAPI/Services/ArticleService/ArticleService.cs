@@ -16,17 +16,18 @@ public class ArticleService : IArticleService
 
     public async Task<IEnumerable<Article>> GetAllArticles()
     {
-        var articles = await _context.Articles.ToListAsync();
+        var articles = await _context.Articles.Include((article) => article.Author).ToListAsync();
         return articles;
     }
 
-    public async Task<IEnumerable<Article>> AddArticle(ArticleDTO articleRequest, Claim idClaim)
+    public async Task<IEnumerable<Article>> AddArticle(ArticleDTO articleRequest, User user)
     {
         var article = new Article()
         {
             Title = articleRequest.Title,
             Content = articleRequest.Content,
-            AuthorId = int.Parse(idClaim.Value),
+            AuthorId = user.Id,
+            Author = user
         };
         
         await _context.Articles.AddAsync(article);

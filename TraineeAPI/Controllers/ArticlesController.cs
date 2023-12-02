@@ -1,3 +1,4 @@
+using System.Net;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using TraineeAPI.DTO;
@@ -27,11 +28,13 @@ public class ArticlesController : Controller
     [Authorize]
     public async Task<ActionResult<Article>> AddArticle([FromBody] ArticleDTO articleRequest)
     {
-        var idClaim = HttpContext.User.Claims
-            .Where((claim) => claim.Type == "id")
-            .First();
-        
-        var result = await _articleService.AddArticle(articleRequest, idClaim);
+        // var idClaim = HttpContext
+        //     .User
+        //     .Claims
+        //     .FirstOrDefault((claim) => claim.Type == "id");
+        HttpContext.Items.TryGetValue("user", out var userObj);
+        User user = (User) userObj;
+        var result = await _articleService.AddArticle(articleRequest, user);
         
         return Ok(result);
     }

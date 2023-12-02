@@ -92,7 +92,7 @@ app.UseHttpsRedirection();
 
 app.UseAuthentication();
 
-app.UseMiddleware<JwtMiddleware>();
+app.UseMiddleware<SetUserMiddleware>();
 
 app.UseAuthorization();
 
