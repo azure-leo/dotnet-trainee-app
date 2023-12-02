@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using TraineeAPI.DTO;
 using TraineeAPI.Services.ArticleService;
 
 namespace TraineeAPI.Controllers;
@@ -24,8 +25,14 @@ public class ArticlesController : Controller
 
     [HttpPost]
     [Authorize]
-    public async Task<ActionResult<Article>> AddArticle([FromBody] Article article)
+    public async Task<ActionResult<Article>> AddArticle([FromBody] ArticleDTO articleRequest)
     {
-        return Ok(article);
+        var idClaim = HttpContext.User.Claims
+            .Where((claim) => claim.Type == "id")
+            .First();
+        
+        var result = await _articleService.AddArticle(articleRequest, idClaim);
+        
+        return Ok(result);
     }
 }

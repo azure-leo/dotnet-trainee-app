@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using TraineeAPI.Data;
+using TraineeAPI.Middleware;
 using TraineeAPI.Services.ArticleService;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -21,8 +22,8 @@ builder.Services.AddSwaggerGen(swagger =>
     swagger.SwaggerDoc("v1", new OpenApiInfo
     {
         Version = "v1",
-        Title = "JWT Token Authentication API",
-        Description = "ASP.NET Core 3.1 Web API"
+        Title = "JWT Token Authentication Articles API",
+        Description = "Create Articles and Users"
     });
     
     // To Enable authorization using Swagger (JWT)  
@@ -88,9 +89,12 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseAuthentication();
-app.UseAuthorization();
 
+app.UseAuthentication();
+
+app.UseMiddleware<JwtMiddleware>();
+
+app.UseAuthorization();
 
 app.MapControllers();
 
