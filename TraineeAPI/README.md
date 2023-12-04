@@ -3,4 +3,4 @@
 3 контроллера: ArticlesController, AuthController, UsersController.
 
 Название локальной БД для тестирования(думаю нужно самому создать локально): TraineeApp.
-Используется образ бд Azure ßSQL.
+Используется образ бд Azure SQL.
